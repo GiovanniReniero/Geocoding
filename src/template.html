@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
   <form action="https://api.mapbox.com/geocoding/v5/mapbox.places/">
@@ -12,9 +13,11 @@
     <input type="text" placeholder="New York" id="luogo" class="chiuso" name="search_text">
     <button>SUBMIT</button>
     </form>
-    <section></section>
+    <section>
+    </section>
+    <div id="map" style="height: 300px; width: 600px"></div>
   </body>
 </html>
 
 
-<!-- "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZ2lvcmVuIiwiYSI6ImNrZ3doY2tkcjAzYXgycnJoYTRvajQ1bXYifQ.ZKH_P5u2rrDaIbNno3u5CA" -->
+
