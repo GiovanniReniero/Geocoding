@@ -3,13 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { template } = require("lodash");
 
 module.exports = {
-  mode: "development",
+  // mode: "development",
   entry: "./src/index.js",
-  output: {
-    filename: "bundle.[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true
-  },
+  // output: {
+  //   filename: "bundle.[contenthash].js",
+  //   path: path.resolve(__dirname, "dist"),
+  //   clean: true
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html"
