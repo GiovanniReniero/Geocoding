@@ -14,3 +14,25 @@
   position: relative;
 }
 
+
+@media screen and (max-width: 575px) {
+  .container{
+    width: 350px;
+    height:50vh;
+    justify-content: space-around;
+  
+  }
+  #modulo {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .immetti {
+    flex-direction: column;
+    justify-content: end;
+  }
+  #map{
+    width: 350px;
+  }
+
+
+}
