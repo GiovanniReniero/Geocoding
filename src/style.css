@@ -1,51 +1,16 @@
 @import url("./app/components_css/text.css");
+@import url("./app/components_css/labels.css");
 @import url("./app/components_css/forms.css");
+
 
 .container{
   width: 800px;
-  margin: 0 auto;
+  height:20vh;
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  border: 4px solid blue;
+  justify-content: center;
+  position: relative;
 }
-
-@media (max-width: 900px) {
-  .contianer{
-    width: 700px;
-  }
-}
-
-@media (max-width: 700px) {
-  .contianer{
-    width: 500px;
-  }
-}
-
-@media (max-width: 600px) {
-  .contianer{
-    width: 550px;
-  }
-
-  
-  
-
-
-
-/* body{
-  background: cornflowerblue;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-body h1{
-  text-align: center;
-}
-
-body h2{
-  text-align: justify; */
-}
-
-#map {
-  height: 300px; 
-  width: 600px;
-  border-radius: 5px;
-}
-
-
 

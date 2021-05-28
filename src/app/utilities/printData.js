@@ -7,6 +7,7 @@ import {gatherNamendCoords} from "./gatherNamendCoords.js"
 // }
 
 function printData (posti) {
+  console.log("Ciao from inside prinData")
   console.log(posti)
   const section = document.querySelector("section")
   section.innerHTML=""
@@ -24,9 +25,13 @@ function printData (posti) {
         keyVal["long"]=coord[0]
         keyVal["lat"]=coord[1]
         results.push(keyVal)
-        const longLat = document.createElement("h3")
-        longLat.innerText = coord
-        section.appendChild(longLat)
+        console.log(results)
+        const longitude = document.createElement("h3")
+        const latitude = document.createElement("h3")
+        longitude.innerText = `long: ${results[0].long}  `
+        latitude.innerText = `lat: ${results[0].lat}`
+        section.appendChild(longitude)
+        section.appendChild(latitude)
       }
     }
   gatherNamendCoords(results)

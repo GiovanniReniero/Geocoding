@@ -1,8 +1,6 @@
 import {printData} from "./printData.js"
 import axios from 'axios'
 
-
-
 const reqMapBox = (url) => {
   axios.get(url)
   .then(({data}) => {
