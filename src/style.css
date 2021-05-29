@@ -3,14 +3,26 @@
 @import url("./app/components_css/forms.css");
 
 
+body {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #cbdfbd ;
+
+}
+
+
+
 .container{
   width: 800px;
-  height:20vh;
+  /* height: 20vh; */
+  /* background-color: #f6f4d2; */
+  height: calc(100vh - 700px);
   margin: 0 auto; 
   display: flex;
   flex-direction: column;
-  border: 4px solid blue;
-  justify-content: center;
+  /* border: 4px solid blue; */
+  justify-content: space-around;
   position: relative;
 }
 
@@ -18,9 +30,8 @@
 @media screen and (max-width: 575px) {
   .container{
     width: 350px;
-    height:50vh;
+    height:30vh;
     justify-content: space-around;
-  
   }
   #modulo {
     flex-direction: column;
@@ -28,11 +39,14 @@
   }
   .immetti {
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
   }
   #map{
     width: 350px;
   }
-
+  body {
+   /* background-color: cornflowerblue; */
+ }
 
 }
