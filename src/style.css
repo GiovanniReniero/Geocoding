@@ -5,48 +5,59 @@
 
 body {
   /* display: flex; */
+  /* flex-direction: column; */
   /* justify-content: center; */
   /* align-items: center; */
-  background-color: #cbdfbd ;
-
+  background-color: #d3fad6;
+  padding-top: 60px;
 }
 
 
-
 .container{
+  
   width: 800px;
-  /* height: 20vh; */
-  /* background-color: #f6f4d2; */
-  height: calc(100vh - 700px);
+  /* height: calc(100vh - 700px); */
+  height: 100vh;
+  background-color: #5c9ead;
+  border-radius: 10px;
   margin: 0 auto; 
   display: flex;
   flex-direction: column;
-  /* border: 4px solid blue; */
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: relative;
+  box-shadow: 0px 5px 15px rgba(0 ,0, 0, 0.1);
+
+
+  /* border: solid 2px blue  */
 }
 
 
 @media screen and (max-width: 575px) {
   .container{
-    width: 350px;
+    width: 80vw;
     height:30vh;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    position: relative
   }
   #modulo {
     flex-direction: column;
     justify-content: space-evenly;
+    flex-grow: 2;
+    flex-basis: 16px;
   }
   .immetti {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
+    flex-basis: 16px;
   }
+
   #map{
-    width: 350px;
+    width: 80vw;
+    height: 60vh;
+    position: absolute;
+    bottom: -64vh
   }
-  body {
-   /* background-color: cornflowerblue; */
- }
 
 }

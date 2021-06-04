@@ -9,7 +9,6 @@ userEntry.addEventListener("submit", hitSubmit)
 
 urlBuilder("Roma")
 
-// 1) Needs some CSS styling
 // 2) Nice to have would be to choose which place to see on map from options provided by mapbox
 // 3) Implement places of interest around chosen location as an extra
 // 4) Offer different styles of map to the end user (satelite and 3d buildings etc.)

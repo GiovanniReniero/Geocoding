@@ -2,7 +2,14 @@
   /* margin-top: 5px; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
+  color: #dda77b;
+}
+
+button{
+  font-weight: 700;
+  color: #b2b8a3;
+
 }
 
 #modulo {
@@ -11,11 +18,14 @@
   align-items: flex-end;
   justify-content: space-evenly;
   align-items: center;
+  flex-basis: 67.81px;
+    
 }
 
 .immetti{
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
+  color: #02394A;
   flex-direction: row;
   justify-content: space-around;
   align-items: baseline;
