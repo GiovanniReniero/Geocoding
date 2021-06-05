@@ -4,16 +4,14 @@
  const container = document.querySelector("#container")
 
  
- const generateRadio = (results) => {
+  function generateRadio (results) {
   console.log("Rodger from inside generateRadio", results.length) 
   section.innerHTML = ""
   const pleaseChoose = document.createElement("h2")
   pleaseChoose.innerText = "Please choose an option"
   section.appendChild(pleaseChoose)
-  
-  for (let i=0; i<results.lenght; i++) {
-    console.log("Di Nuovo from inside generateRadio") 
-
+  //the following is not working!
+  for(let i=0; i<results.length; i++) {
     let radioButton = document.createElement("input")
     radioButton.setAttribute("type", "radio")
     radioButton.setAttribute("name", "option")
@@ -23,10 +21,19 @@
 
     let radioLabel = document.createElement("label")
     radioLabel.setAttribute("for", `${results[i].long}`)
+    let check = radioLabel.getAttribute("for")
+    console.log(check)
     radioLabel.innerText = `${results[i].name}`
     radioButton.setAttribute("id", `${results[i].long}`)
-    container.appendChild(radioButton)
-    container.appendChild(radioLabel)
+    let check2 = radioButton.getAttribute("id")
+    let check3 = radioButton.getAttribute("type")
+    console.log("Hellas Verona", check2)
+    console.log("Forza Verona", check3)
+    console.log(radioLabel)
+    
+    // console.log(radioButton.innerText)
+    section.appendChild(radioButton)
+    section.appendChild(radioLabel)
     // section.appendChild(brk)
   }
   // section.appendChild(btn)
