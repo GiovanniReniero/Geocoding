@@ -1,50 +1,41 @@
- import {gatherNamendCoords} from "./gatherNamendCoords.js"
+ import {gatherNamendCoords} from "./gatherNamendCoords"
+ import {dealEventBis} from "./dealEventBis"
 
  const section = document.querySelector(".immetti")
- const container = document.querySelector("#container")
-
+ let brk = document.createElement("br")
+ let btn = document.createElement("button")
+ btn.setAttribute("type", "submit")
+ btn.innerText = "Select"
  
-  function generateRadio (results) {
-  console.log("Rodger from inside generateRadio", results.length) 
-  section.innerHTML = ""
-  const pleaseChoose = document.createElement("h2")
-  pleaseChoose.innerText = "Please choose an option"
-  section.appendChild(pleaseChoose)
-  //the following is not working!
-  for(let i=0; i<results.length; i++) {
-    let radioButton = document.createElement("input")
-    radioButton.setAttribute("type", "radio")
-    radioButton.setAttribute("name", "option")
-    radioButton.setAttribute("value", `${results[i].name},${results[i].long},${results[i].lat}`)
-    let mango = radioButton.getAttribute("value")
-    console.log("Son mi", mango)
-
-    let radioLabel = document.createElement("label")
-    radioLabel.setAttribute("for", `${results[i].long}`)
-    let check = radioLabel.getAttribute("for")
-    console.log(check)
-    radioLabel.innerText = `${results[i].name}`
-    radioButton.setAttribute("id", `${results[i].long}`)
-    let check2 = radioButton.getAttribute("id")
-    let check3 = radioButton.getAttribute("type")
-    console.log("Hellas Verona", check2)
-    console.log("Forza Verona", check3)
-    console.log(radioLabel)
-    
-    // console.log(radioButton.innerText)
-    section.appendChild(radioButton)
-    section.appendChild(radioLabel)
-    // section.appendChild(brk)
+ 
+ function generateRadio (results) {
+   console.log("Rodger from inside generateRadio", results.length) 
+   section.innerHTML = ""
+   const pleaseChoose = document.createElement("h4")
+   pleaseChoose.innerText = "Select an option"
+   section.appendChild(pleaseChoose)
+   
+   for(let i=0; i<results.length; i++) {
+     let radioButton = document.createElement("input")
+     radioButton.setAttribute("type", "radio")
+     radioButton.setAttribute("name", "option")
+     radioButton.setAttribute("value", `${results[i].name},${results[i].long},${results[i].lat}`)
+     let radioLabel = document.createElement("label")
+     radioLabel.setAttribute("for", `${results[i].long}`)
+     radioButton.setAttribute("id", `${results[i].long}`)
+     radioLabel.innerText = `${results[i].name}`
+     section.appendChild(radioButton)
+     section.appendChild(radioLabel)
+     section.append(brk)
   }
-  // section.appendChild(btn)
-  // btn.addEventListener("click", dealEventBis)
+  section.appendChild(btn)
+  btn.addEventListener("click", dealEventBis)
 }
 
 function generateChoice(results){
   console.log("ciao from inside generateChoice")
   console.log(results)
   console.log(results.length)
-
   if (results.length > 1) {
     generateRadio(results)
   } 
@@ -68,7 +59,7 @@ function printData (posti) {
   section.innerHTML=""
   const results = []  
   for (let element of posti){
-      if (element.place_type[0] === "place"){
+      if (element.place_type.includes("place")) {
         const keyVal={}
         const name = element.place_name
         const coord = element.center
