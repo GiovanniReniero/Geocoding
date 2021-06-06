@@ -19,13 +19,14 @@
      let radioButton = document.createElement("input")
      radioButton.setAttribute("type", "radio")
      radioButton.setAttribute("name", "option")
-     radioButton.setAttribute("value", `${results[i].name},${results[i].long},${results[i].lat}`)
+     radioButton.setAttribute("value", `${results[i].name},${results[i].long},${results[i].lat}, ${results[i].bbox}`)
+    //  radioButton.setAttribute("value", results)
      let radioLabel = document.createElement("label")
      radioLabel.setAttribute("for", `${results[i].long}`)
      radioButton.setAttribute("id", `${results[i].long}`)
      radioLabel.innerText = `${results[i].name}`
-     section.appendChild(radioButton)
      section.appendChild(radioLabel)
+     section.appendChild(radioButton)
      section.append(brk)
   }
   section.appendChild(btn)
@@ -63,14 +64,20 @@ function printData (posti) {
         const keyVal={}
         const name = element.place_name
         const coord = element.center
+        const bbox = element.bbox
+
         keyVal["name"]=name
+        keyVal["bbox"]=bbox
         keyVal["long"]=coord[0]
         keyVal["lat"]=coord[1]
         results.push(keyVal)
-        console.log(results)
       }
     }
+  console.log(results)
   generateChoice(results)
   }
 
+// pintdata 2 is necessary to narrow down searches to just the selected radio button value. Otherwise even after specifyin name and coordinates multiple places named san jose or santa maria would keep givin multiple 
 export { printData }
+
+
