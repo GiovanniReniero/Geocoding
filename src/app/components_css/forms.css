@@ -1,15 +1,16 @@
 .label {
   /* margin-top: 5px; */
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #dda77b;
+  padding: 8px 2px;
 }
 
 button{
   font-weight: 700;
   color: #b2b8a3;
-
+  margin: 8px 2px;
 }
 
 #modulo {
@@ -19,8 +20,17 @@ button{
   justify-content: space-evenly;
   align-items: center;
   flex-basis: 67.81px;
-    
 }
+
+.radioBotto  {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-around
+  }
+
+/* input.radio { */
+  /* width: auto; */
+/* } */
 
 .immetti{
   display: flex;
@@ -29,6 +39,7 @@ button{
   flex-direction: row;
   justify-content: space-around;
   align-items: baseline;
+  
 }
 
 
@@ -41,6 +52,15 @@ button{
   /* border: 1px solid #f19c79; */
   box-shadow: 0px 5px 15px rgba(0 ,0, 0, 0.1);
   /* left: 55px; */
+}
+
+.marker {
+  background-image: url('../assets/mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 #luogo {

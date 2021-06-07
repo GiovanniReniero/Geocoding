@@ -46,12 +46,36 @@ body {
     flex-grow: 2;
     flex-basis: 16px;
   }
-  .immetti {
-    flex-direction: column;
+  
+/* .spingi{ */
+  /* position: absolute; */
+  /* bottom: 8px; */
+/* } */
+
+  
+
+  .radioBotto {
+    /* margin-top: -16px; */
+    padding-bottom: 12px;
+    flex-direction:column-reverse;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-    flex-basis: 16px;
+    /* align-content: flex-start; */
+    font-size: 14px;
+  }
+  
+  
+
+  .immetti {
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 16px;
+    flex-basis: 8px;
+  }
+  .immetti h4 {
+    margin-bottom: 0px;
   }
 
   #map{

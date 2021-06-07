@@ -1,5 +1,4 @@
 import {reqMapBox} from "./reqMapBox.js"
-import {reqMapBox2} from "./reqMapBox.js"
 
 let token = "pk.eyJ1IjoiZ2lvcmVuIiwiYSI6ImNrb3F4b2piMjB6djIyeW51MXRrNDlibnAifQ.Xrh4UH-0RwRGCRPRxl-EpA"
 
@@ -15,7 +14,7 @@ const urlBuilder2 = (choice) => {
   proximity.unshift(name) // Created an array with Name and coordinates of desired location
   console.log(proximity)
   let url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${proximity[0]}.json?access_token=${token}&proximity=${proximity[1]},${proximity[2]}&limit=1&bbox=${proximity[3]}, ${proximity[4]}, ${proximity[5]}, ${proximity[6]}`
-  console.log(url)
+  // console.log(url)
   reqMapBox(url) 
 }
 

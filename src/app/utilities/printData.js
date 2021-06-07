@@ -2,41 +2,48 @@
  import {dealEventBis} from "./dealEventBis"
 
  const section = document.querySelector(".immetti")
+
  let brk = document.createElement("br")
  let btn = document.createElement("button")
+ btn.classList.add("spingi")
  btn.setAttribute("type", "submit")
  btn.innerText = "Select"
  
  
  function generateRadio (results) {
-   console.log("Rodger from inside generateRadio", results.length) 
+  //  console.log("Rodger from inside generateRadio", results.length) 
    section.innerHTML = ""
    const pleaseChoose = document.createElement("h4")
    pleaseChoose.innerText = "Select an option"
    section.appendChild(pleaseChoose)
+   const radioBotto = document.createElement("div")
+   radioBotto.classList.add("radioBotto")
+   section.appendChild(radioBotto)
    
    for(let i=0; i<results.length; i++) {
-     let radioButton = document.createElement("input")
-     radioButton.setAttribute("type", "radio")
-     radioButton.setAttribute("name", "option")
-     radioButton.setAttribute("value", `${results[i].name},${results[i].long},${results[i].lat}, ${results[i].bbox}`)
-    //  radioButton.setAttribute("value", results)
-     let radioLabel = document.createElement("label")
-     radioLabel.setAttribute("for", `${results[i].long}`)
-     radioButton.setAttribute("id", `${results[i].long}`)
-     radioLabel.innerText = `${results[i].name}`
-     section.appendChild(radioLabel)
-     section.appendChild(radioButton)
-     section.append(brk)
+    let radioButton = document.createElement("input")
+  //  radioButton.classList.add("radioBotto")
+    radioButton.setAttribute("type", "radio")
+    radioButton.setAttribute("name", "option")
+    radioButton.setAttribute("value", `${results[i].name},${results[i].long},${results[i].lat}, ${results[i].bbox}`)
+    let radioLabel = document.createElement("label")
+  //  radioLabel.classList.add("perBotto")
+    radioLabel.setAttribute("for", `${results[i].long}`)
+    radioButton.setAttribute("id", `${results[i].long}`)
+    radioLabel.innerText = `${results[i].name}`
+    radioBotto.appendChild(radioButton)
+    radioBotto.appendChild(radioLabel)
+    radioBotto.append(brk)
+    radioBotto.append(brk)
   }
   section.appendChild(btn)
   btn.addEventListener("click", dealEventBis)
 }
 
 function generateChoice(results){
-  console.log("ciao from inside generateChoice")
-  console.log(results)
-  console.log(results.length)
+  // console.log("ciao from inside generateChoice")
+  // console.log(results)
+  // console.log(results.length)
   if (results.length > 1) {
     generateRadio(results)
   } 
@@ -55,8 +62,8 @@ function generateChoice(results){
 }
 
 function printData (posti) {
-  console.log("Ciao from inside prinData")
-  console.log(posti)
+  // console.log("Ciao from inside prinData")
+  // console.log(posti)
   section.innerHTML=""
   const results = []  
   for (let element of posti){
@@ -77,7 +84,5 @@ function printData (posti) {
   generateChoice(results)
   }
 
-// pintdata 2 is necessary to narrow down searches to just the selected radio button value. Otherwise even after specifyin name and coordinates multiple places named san jose or santa maria would keep givin multiple 
+
 export { printData }
-
-
